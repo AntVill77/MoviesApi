@@ -1,4 +1,4 @@
-package org.example.superheroesapi
+package org.example.MoviesApi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

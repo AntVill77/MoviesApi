@@ -1,4 +1,4 @@
-package org.example.superheroesapi
+package org.example.MoviesApi
 
 import org.junit.Test
 
