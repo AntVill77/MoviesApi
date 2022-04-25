@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/antvi/AndroidStudioProjects/MoviesApi/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/antvi/AndroidStudioProjects/MoviesApi/app/src/main/res/drawable/gradient.xml" value="0.1525" />
+        <entry key="..\:/Users/antvi/AndroidStudioProjects/MoviesApi/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.1795" />
+        <entry key="..\:/Users/antvi/AndroidStudioProjects/MoviesApi/app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="..\:/Users/antvi/AndroidStudioProjects/MoviesApi/app/src/main/res/layout/fragment_movie.xml" value="0.21" />
+        <entry key="..\:/Users/antvi/AndroidStudioProjects/MoviesApi/app/src/main/res/layout/fragment_movie_detail.xml" value="0.33" />
         <entry key="..\:/Users/antvi/AndroidStudioProjects/SuperHeroesApi/app/src/main/res/layout/activity_main.xml" value="0.16304347826086957" />
       </map>
     </option>
