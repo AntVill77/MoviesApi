@@ -9,22 +9,12 @@ import org.example.MoviesApi.repository.MovieRepository
 
 class MovieViewModel(private  val repo: MovieRepository): ViewModel() {
 
-    fun fetchTopRatedMovies() = liveData(Dispatchers.IO){
+    fun fetchMainScreenMovies() = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
 
         try {
-            emit(Resource.Success(repo.getTopRatedMovies()))
-        }catch (e: Exception){
-            emit(Resource.Failure(e))
-        }
-    }
-
-    fun fetchPopularMovies() = liveData(Dispatchers.IO){
-        emit(Resource.Loading())
-
-        try {
-            emit(Resource.Success(repo.getPopularMovies()))
-        }catch (e: Exception){
+            emit(Resource.Success(Pair(repo.getTopRatedMovies(), repo.getPopularMovies())))
+        } catch (e: Exception) {
             emit(Resource.Failure(e))
         }
     }

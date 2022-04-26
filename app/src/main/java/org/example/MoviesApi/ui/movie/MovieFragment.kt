@@ -27,32 +27,19 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMovieBinding.bind(view)
 
-        viewModel.fetchTopRatedMovies().observe(viewLifecycleOwner, Observer { result ->
-          when(result){
-              is Resource.Loading -> {
-                 Log.d("LiveDataTopRated", "Loading...")
-              }
-              is Resource.Success -> {
-                  Log.d("LiveDataTopRated", "${result.data}")
-              }
-              is Resource.Failure -> {
-                  Log.d("Error", "${result.exception}")
-              }
-          }
-        })
-
-        viewModel.fetchPopularMovies().observe(viewLifecycleOwner, Observer { result ->
+        viewModel.fetchMainScreenMovies().observe(viewLifecycleOwner, Observer { result ->
             when(result){
                 is Resource.Loading -> {
-                    Log.d("LiveDataPopular", "Loading...")
+                    Log.d("LiveData", "Loading...")
                 }
                 is Resource.Success -> {
-                    Log.d("LiveDataPopular", "${result.data}")
+                    Log.d("LiveData", "TopRated: ${result.data.first} \n \n Popular: ${result.data.second}")
                 }
                 is Resource.Failure -> {
                     Log.d("Error", "${result.exception}")
                 }
             }
+
         })
     }
 }
