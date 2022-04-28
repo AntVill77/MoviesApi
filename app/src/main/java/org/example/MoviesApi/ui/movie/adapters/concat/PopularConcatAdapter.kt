@@ -15,6 +15,7 @@ class PopularConcatAdapter(private val moviesAdapter: MovieAdapter):RecyclerView
     override fun onBindViewHolder(holder: BaseConcatHolder<*>, position: Int) {
         when(holder){
             is ConcatViewHolder -> holder.bind(moviesAdapter)
+            else -> throw IllegalArgumentException("No viewholder to show this data, did you forgot to add it to the onBindViewHolder?")
         }
     }
 

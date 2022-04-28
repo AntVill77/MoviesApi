@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -45,13 +46,15 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnMovieCli
                 is Resource.Success -> {
                     binding.progressBar.visibility = View.GONE
                     concatAdapter.apply {
-                        addAdapter(0, PopularConcatAdapter(MovieAdapter(result.data.first.results, this@MovieFragment)))
-                        addAdapter(1, TopRatedConcatAdapter(MovieAdapter(result.data.second.results, this@MovieFragment)))
+                        addAdapter(0,TopRatedConcatAdapter(MovieAdapter(result.data.first.results,this@MovieFragment)))
+                        addAdapter(1,PopularConcatAdapter(MovieAdapter(result.data.second.results,this@MovieFragment)))
                     }
                 }
                 is Resource.Failure -> {
                     binding.progressBar.visibility = View.GONE
-                    Log.d("Error", "${result.exception}")
+                    Log.e("FetchError", "Error: $result.exception ")
+                    Toast.makeText(requireContext(), "Error: ${result.exception}", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
 

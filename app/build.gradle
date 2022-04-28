@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
 }
@@ -33,6 +35,10 @@ android {
 
     buildFeatures{
         viewBinding true
+    }
+
+    androidExtensions{
+        features = ["parcelize"]
     }
 }
 
