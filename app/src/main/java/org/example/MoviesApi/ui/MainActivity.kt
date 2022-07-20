@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import kotlinx.android.synthetic.main.fragment_movie_detail.*
 import org.example.MoviesApi.R
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,6 @@ class MainActivity : AppCompatActivity() {
 
     fun PruebaRevert(){
 
-
+      textView4
     }
 }
