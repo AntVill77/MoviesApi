@@ -21,4 +21,9 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.popBackStack()
     }
+
+    fun PruebaRevert(){
+
+
+    }
 }
