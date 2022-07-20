@@ -23,8 +23,4 @@ class MainActivity : AppCompatActivity() {
         return navController.popBackStack()
     }
 
-    fun PruebaRevert(){
-
-      textView4
-    }
 }
