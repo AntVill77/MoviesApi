@@ -1,5 +1,6 @@
 package org.example.MoviesApi.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
@@ -13,9 +14,13 @@ class MovieViewModel(private  val repo: MovieRepository): ViewModel() {
         emit(Resource.Loading())
 
         try {
-            emit(Resource.Success(Pair(repo.getTopRatedMovies(), repo.getPopularMovies())))
+            emit(Resource.Success(Triple(repo.getTopRatedMovies(), repo.getPopularMovies(), repo.getUpcomingMovies())))
+            Log.d("LiveData", "fetchMainScreenMoviesR: ${repo.getTopRatedMovies()}")
+            Log.d("LiveData", "fetchMainScreenMoviesP: ${repo.getPopularMovies()}")
+            Log.d("LiveData", "fetchMainScreenMoviesU: ${repo.getUpcomingMovies()}")
         } catch (e: Exception) {
             emit(Resource.Failure(e))
+            Log.d("LiveData", "fetchMainScreenMovies: ${e.message}")
         }
     }
 }
