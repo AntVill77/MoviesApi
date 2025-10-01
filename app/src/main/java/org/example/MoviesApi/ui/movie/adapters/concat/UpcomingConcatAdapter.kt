@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.example.MoviesApi.core.BaseConcatHolder
-import org.example.MoviesApi.databinding.TopRatedMoviesRowBinding
+import org.example.MoviesApi.databinding.UpcomingMoviesRowBinding
 
-class TopRatedConcatAdapter(private val moviesAdapter: MovieAdapter):
-    RecyclerView.Adapter<BaseConcatHolder<*>>() {
+class UpcomingConcatAdapter (private val moviesAdapter: MovieAdapter):RecyclerView.Adapter<BaseConcatHolder<*>>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseConcatHolder<*> {
-        val itemBinding = TopRatedMoviesRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemBinding = UpcomingMoviesRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ConcatViewHolder(itemBinding)
     }
 
@@ -22,9 +21,9 @@ class TopRatedConcatAdapter(private val moviesAdapter: MovieAdapter):
 
     override fun getItemCount(): Int = 1
 
-    private inner class ConcatViewHolder(val binding: TopRatedMoviesRowBinding): BaseConcatHolder<MovieAdapter>(binding.root){
+    private inner class ConcatViewHolder(val binding: UpcomingMoviesRowBinding): BaseConcatHolder<MovieAdapter>(binding.root){
         override fun bind(adapter: MovieAdapter){
-            binding.rvTopRatedMovies.adapter = adapter
+            binding.rvUpcomingMovies.adapter = adapter
         }
     }
 }

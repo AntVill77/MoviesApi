@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.ConcatAdapter
 import org.example.MoviesApi.R
 import org.example.MoviesApi.core.Resource
 import org.example.MoviesApi.data.model.Movie
-import org.example.MoviesApi.data.model.MovieList
 import org.example.MoviesApi.data.remote.MovieDataSource
 import org.example.MoviesApi.databinding.FragmentMovieBinding
 import org.example.MoviesApi.presentation.MovieViewModel
@@ -22,6 +21,7 @@ import org.example.MoviesApi.repository.RetrofitClient
 import org.example.MoviesApi.ui.movie.adapters.concat.MovieAdapter
 import org.example.MoviesApi.ui.movie.adapters.concat.PopularConcatAdapter
 import org.example.MoviesApi.ui.movie.adapters.concat.TopRatedConcatAdapter
+import org.example.MoviesApi.ui.movie.adapters.concat.UpcomingConcatAdapter
 
 class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnMovieClickListener {
 
@@ -46,9 +46,11 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnMovieCli
                 is Resource.Success -> {
                     binding.progressBar.visibility = View.GONE
                     concatAdapter.apply {
-                        addAdapter(0,TopRatedConcatAdapter(MovieAdapter(result.data.first.results,this@MovieFragment)))
+                        addAdapter(0, UpcomingConcatAdapter(MovieAdapter(result.data.first.results, this@MovieFragment)))
                         addAdapter(1,PopularConcatAdapter(MovieAdapter(result.data.second.results,this@MovieFragment)))
+                        addAdapter(2,TopRatedConcatAdapter(MovieAdapter(result.data.third.results,this@MovieFragment)))
                     }
+                    binding.rvMovies.adapter = concatAdapter
                 }
                 is Resource.Failure -> {
                     binding.progressBar.visibility = View.GONE
