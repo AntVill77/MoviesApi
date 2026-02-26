@@ -8,5 +8,16 @@ Cuando se elige una película se redirecciona a una pantalla de detalle de pelí
 
 Se consume el api themoviedb con retrofit2 en formato json y se usa un convertidor gson
 
-Para la presentación de imágenes se utiuliza Glide.
+Para la presentación de imágenes se utiliza Glide.
+
+JavaVersion.VERSION_1_8 (Java 8)
+Gradle 7.2
+Version Api 31
+Android 12
+
+Mejoras 
+El proyecto se  mejorará al ser la migración de XML legacy a Jetpack compose (reclycler view a Lazy Column y Lazy Row)
+Utilizar en el proyecto flows, corrutinas e inyección de dependencias
+Actualizar la navegación a nav compose
+Se seguirá utilizando como base MVVM como arwquitectura
 
