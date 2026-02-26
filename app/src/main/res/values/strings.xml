@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">MoviesApi</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">Api de Peliculas</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="upcoming_movies">Próximos lanzamientos</string>
+    <string name="mejores_valoradas">Mejores Valoradas</string>
+    <string name="movies_popular">Películas Populares</string>
 </resources>

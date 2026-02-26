@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Top Rated Movies"
+        android:text="@string/mejores_valoradas"
         android:textStyle="bold"
         android:textSize="20sp"/>
 
