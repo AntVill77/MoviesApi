@@ -1,9 +1,5 @@
 package org.example.MoviesApi.data.model
 
-import android.os.Parcelable
-import  kotlinx.android.parcel.Parcelize
-
-//@Parcelize
 data class Movie(
     val id: Int = -1,
     val adult: Boolean = false,
@@ -20,6 +16,5 @@ data class Movie(
     val vote_average: Double = -1.0,
     val vote_count: Int = -1
 )
-    //: Parcelable
 
 data class MovieList(val results: List<Movie> = listOf())

@@ -1,6 +1,5 @@
 package org.example.MoviesApi.data.remote
 
-import android.util.Log
 import org.example.MoviesApi.application.AppConstants
 import org.example.MoviesApi.data.model.MovieList
 import org.example.MoviesApi.repository.WebService
@@ -9,18 +8,13 @@ class MovieDataSource(private val webService: WebService ) {
 
     suspend fun getUpcomingMovies(): MovieList {
         return webService.getUpcomingMovies(AppConstants.API_KEY)
-       // Log.d("DataSource", "getUpcomingMovies: ${webService.getUpcomingMovies(AppConstants.API_KEY)}")
     }
 
     suspend fun getTopRatedMovies(): MovieList {
        return webService.getTopRatedMovies(AppConstants.API_KEY)
-      //  Log.d("DataSource", "getTopRatedMovies: ${webService.getTopRatedMovies(AppConstants.API_KEY)}")
-
     }
 
     suspend fun getPopularMovies(): MovieList{
         return webService.getPopularMovies(AppConstants.API_KEY)
-     //   Log.d("DataSource", "getPopularMovies: ${webService.getPopularMovies(AppConstants.API_KEY)}")
-
     }
 }
